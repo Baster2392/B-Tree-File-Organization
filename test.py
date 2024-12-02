@@ -75,7 +75,7 @@ class TestBTree(unittest.TestCase):
         # Usunięcie sprawi, że węzeł może wymagać kompensacji (niezaimplementowane usuwanie, ale symulacja testu kompensacji)
         left, right = BTreeNode.get_node_sibling(self.btree.root.children[0])
         middle_index = self.btree.root.children.index(self.btree.root.children[0])
-        compensated = BTreeNode.compensation(left, right, self.btree.root.children[0], middle_index)
+        compensated = BTreeNode.compensation_insert(left, right, self.btree.root.children[0], middle_index)
         self.assertTrue(compensated)  # Powinna być możliwa kompensacja
 
     def test_traverse(self):
@@ -106,6 +106,18 @@ class TestBTree(unittest.TestCase):
         for key in keys:
             self.btree.insert(key, f"value{key}")
         self.assertEqual(self.btree.traverse(), sorted(keys))
+
+    def test_large_data_insert_and_delete(self):
+        self.t = 4  # Minimalny stopień B-drzewa
+        self.btree = BTree(self.t)
+
+        keys = numpy.random.choice(1000000, size=10000).tolist()
+        keys = numpy.unique(keys)
+        for key in keys:
+            self.btree.insert(key, f"value{key}")
+        for key in keys:
+            self.btree.delete(key)
+        self.assertEqual(self.btree.traverse(), [])
 
 if __name__ == "__main__":
     unittest.main()
