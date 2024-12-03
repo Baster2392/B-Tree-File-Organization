@@ -2,21 +2,25 @@ from btree import *
 
 
 def parse_file(file_path, btree):
-    try:
-        with open(file_path, 'r') as file:
-            for line in file:
-                key, value = line.strip().split(':')
-                key = int(key)
-                value = list(map(int, value.strip(' []').split(',')))
-                btree.insert(key, value)
-        return btree
-    except Exception as e:
-        print(f"Błąd podczas parsowania pliku: {e}")
-        return None
+    with open(file_path, 'r') as file:
+        offset = file.tell()
+        line = file.readline()
+        while line:
+            flag, key, _ = line.strip().split(':')
+            key = int(key)
+            if flag == '1':
+                btree.insert(key, offset, loading_file=True)
+            offset = file.tell()
+            line = file.readline()
+    return btree
 
 
 if __name__ == '__main__':
     tree = BTree(t=4)
+    filepath = f"data/{input("Enter file name: ")}"
+    tree.main_file_path = filepath
+    new_tree = parse_file(filepath, tree)
+    print("File parsed successfully.")
     while True:
         option = input("Choose an option:\n"
                        "1. Insert\n"
@@ -24,9 +28,7 @@ if __name__ == '__main__':
                        "3. Search\n"
                        "4. Display tree\n"
                        "5. Update value\n"
-                       "6. Reorganise\n"
-                       "7. Read file\n"
-                       "8. Exit\n"
+                       "7. Exit\n"
                        "Enter your choice: ")
         match option:
             case "1":
@@ -58,11 +60,6 @@ if __name__ == '__main__':
                 else:
                     print(f"Not found {key} in tree.")
             case "6":
-                pass
-            case "7":
-                new_tree = parse_file(f"data/{input("Enter file name: ")}", tree)
-                print("File parsed successfully.")
-            case "8":
                 exit(0)
 
         input("Press Enter to continue...")

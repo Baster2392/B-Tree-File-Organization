@@ -1,3 +1,8 @@
+import linecache
+
+BLOCK_SIZE = 32
+
+
 class BTreeNode:
     def __init__(self, t, ancestor=None, is_leaf=True):
         self.t = t  # Max number of keys in one node
@@ -167,10 +172,15 @@ class BTreeNode:
 
 
 class BTree:
-    def __init__(self, t):
+    def __init__(self, file=None, t=4):
         self.root = BTreeNode(t)
         self.t = t
+        self.main_file_path = file
+        self.index_in_file = 0
         self.read_write_operations = 0
+
+    def write_node(self, node):
+        pass
 
     def traverse(self):
         result = []
@@ -203,7 +213,7 @@ class BTree:
 
         return self.search(k, node.children[i])
 
-    def insert(self, key, value):
+    def insert(self, key, value, loading_file=False):
         node, status = self.search(key)
         if status == "found":
             return
@@ -213,6 +223,9 @@ class BTree:
 
         # insert new key if node is not full
         if len(node.keys) <= self.t:
+            if not loading_file:
+                value = self.insert_to_main_file(key, value)
+                self.index_in_file += 1
             self.insert_into_node(key, value, node)
 
         if len(node.keys) > self.t:
@@ -246,10 +259,15 @@ class BTree:
             # remove predecessor from its old node
             neighbour_node.keys.remove(neighbour_key)
             neighbour_node.data.remove(neighbour_value)
+            # remove from main file
+            self.delete_from_main_file(neighbour_value)
             self.compensate_and_merge(neighbour_node)
         else:
+            offset = int(node.data[key_index])
             node.keys.remove(key)
-            node.data.remove(node.data[key_index])
+            node.data.remove(offset)
+            # remove from main file
+            self.delete_from_main_file(offset)
             self.compensate_and_merge(node)
 
     def compensate_and_merge(self, node):
@@ -342,9 +360,6 @@ class BTree:
         node.keys.insert(i, key)
         node.data.insert(i, value)
 
-    def reorganize(self):
-        print("Reorganizacja drzewa... (niezrealizowana, demonstracja mechanizmu).")
-
     def display(self, node=None, level=0, values=True):
         if node is None:
             node = self.root
@@ -353,9 +368,27 @@ class BTree:
         for child in node.children:
             self.display(child, level + 1, values)
 
+    def insert_to_main_file(self, key, value):
+        with open(self.main_file_path, 'a') as f:
+            offset = f.tell()
+            f.write("1: " + str(key) + ": " + str(value) + "\n")
+        return offset
+
+    def delete_from_main_file(self, value):
+        with open(self.main_file_path, 'r+') as f:
+            f.seek(value)
+            line = f.readline()
+            print(f"Original line: {line}")
+
+            new_line = line.replace('1', '0', 1)
+            print(f"Modified line: {new_line}")
+
+            f.seek(value)
+            f.write(new_line)
+
 
 if __name__ == "__main__":
-    b_tree = BTree(t=3)
+    b_tree = BTree(t=4)
 
     records1 = [10, 12, 20, 5, 6, 13, 30, 7, 34, 67, 34, 98, 45, 1, 35, 44, 47, 51, 69, 70,
                 18, 23, 102, 61, 22, 80, 81, 82, 55, 66, 11, 0, 150, -1, -2, -3, -4, 9, 77, 105, 107, 106, -10,

@@ -13,7 +13,7 @@ def generate_records(file_name, num_records):
 
             value = list(random.choices(range(10), k=random.randint(1, 30)))
 
-            file.write(f"{key}: {sorted(value)}\n")
+            file.write(f"1: {key}: {sorted(value)}\n")
     print(f"Plik '{file_name}' został wygenerowany z {num_records} rekordami.")
 
 
