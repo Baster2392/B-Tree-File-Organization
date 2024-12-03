@@ -1,5 +1,5 @@
 import unittest
-from main import *
+from btree import *
 import numpy
 
 class TestBTree(unittest.TestCase):
@@ -108,7 +108,7 @@ class TestBTree(unittest.TestCase):
         self.assertEqual(self.btree.traverse(), sorted(keys))
 
     def test_large_data_insert_and_delete(self):
-        self.t = 4  # Minimalny stopień B-drzewa
+        self.t = 3  # Minimalny stopień B-drzewa
         self.btree = BTree(self.t)
 
         keys = numpy.random.choice(1000000, size=10000).tolist()
