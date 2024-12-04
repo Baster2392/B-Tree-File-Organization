@@ -28,7 +28,7 @@ if __name__ == '__main__':
                        "3. Search\n"
                        "4. Display tree\n"
                        "5. Update value\n"
-                       "7. Exit\n"
+                       "6. Exit\n"
                        "Enter your choice: ")
         match option:
             case "1":
@@ -49,7 +49,7 @@ if __name__ == '__main__':
                     print(f"Not found {key} in tree.")
             case "4":
                 option = input("Display values? (y/n): ")
-                tree.display(values=True if option == "y" else False)
+                tree.display(offsets=True if option == "y" else False)
             case "5":
                 key = int(input("Enter key: "))
                 value = input("Enter new value: ")

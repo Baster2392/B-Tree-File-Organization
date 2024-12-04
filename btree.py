@@ -7,7 +7,7 @@ class BTreeNode:
     def __init__(self, t, ancestor=None, is_leaf=True):
         self.t = t  # Max number of keys in one node
         self.keys = []
-        self.data = []
+        self.offsets = []
         self.children = []
         self.ancestor = ancestor
         self.is_leaf = is_leaf
@@ -56,7 +56,7 @@ class BTreeNode:
     @staticmethod
     def compensate(left, right, ancestor, middle_index, operation="insert"):
         keys = []
-        data = []
+        offsets = []
         children = []
 
         split_index = left.t if operation == "insert" else left.t // 2
@@ -65,26 +65,26 @@ class BTreeNode:
 
         # add items in right order
         keys.extend(left.keys)
-        data.extend(left.data)
+        offsets.extend(left.offsets)
         children.extend(left.children)
         keys.append(ancestor.keys[middle_index])
-        data.append(ancestor.data[middle_index])
+        offsets.append(ancestor.offsets[middle_index])
         keys.extend(right.keys)
-        data.extend(right.data)
+        offsets.extend(right.offsets)
         children.extend(right.children)
 
         # fill left page
         left.keys = keys[:split_index]
-        left.data = data[:split_index]
+        left.offsets = offsets[:split_index]
         left.children = children[:split_index + 1]
 
         # fill middle index
         ancestor.keys[middle_index] = keys[split_index]
-        ancestor.data[middle_index] = data[split_index]
+        ancestor.offsets[middle_index] = offsets[split_index]
 
         # fill right page
         right.keys = keys[split_index + 1:]
-        right.data = data[split_index + 1:]
+        right.offsets = offsets[split_index + 1:]
         right.children = children[split_index + 1:]
 
     @staticmethod
@@ -99,11 +99,11 @@ class BTreeNode:
         # get middle item
         middle_index = len(node.keys) // 2
         middle_key = node.keys[middle_index]
-        middle_data = node.data[middle_index]
+        middle_offset = node.offsets[middle_index]
 
         # move right items to new node
         new_node.keys = node.keys[middle_index + 1:]
-        new_node.data = node.data[middle_index + 1:]
+        new_node.offsets = node.offsets[middle_index + 1:]
 
         # if node is not a leaf, move children to a new node
         if not node.is_leaf:
@@ -113,7 +113,7 @@ class BTreeNode:
 
         # cut moved data
         node.keys = node.keys[:middle_index]
-        node.data = node.data[:middle_index]
+        node.offsets = node.offsets[:middle_index]
         if not node.is_leaf:
             node.children = node.children[:middle_index + 1]
 
@@ -121,7 +121,7 @@ class BTreeNode:
         if node.ancestor is None:
             new_root = BTreeNode(node.t, is_leaf=False)
             new_root.keys = [middle_key]
-            new_root.data = [middle_data]
+            new_root.offsets = [middle_offset]
             new_root.children = [node, new_node]
             node.ancestor = new_root
             new_node.ancestor = new_root
@@ -135,7 +135,7 @@ class BTreeNode:
             insert_position += 1
 
         ancestor.keys.insert(insert_position, middle_key)
-        ancestor.data.insert(insert_position, middle_data)
+        ancestor.offsets.insert(insert_position, middle_offset)
         ancestor.children.insert(insert_position + 1, new_node)
 
         new_node.ancestor = ancestor
@@ -148,11 +148,11 @@ class BTreeNode:
 
         # move key from ancestor to new node
         left.keys.append(ancestor.keys[middle_index])
-        left.data.append(ancestor.data[middle_index])
+        left.offsets.append(ancestor.offsets[middle_index])
 
         # add keys and children from right node to left node
         left.keys.extend(right.keys)
-        left.data.extend(right.data)
+        left.offsets.extend(right.offsets)
         left.children.extend(right.children)
 
         # set ancestor node for children of right node to left
@@ -161,14 +161,14 @@ class BTreeNode:
 
         # delete key and children from ancestor
         ancestor.keys.pop(middle_index)
-        ancestor.data.pop(middle_index)
+        ancestor.offsets.pop(middle_index)
         ancestor.children.remove(right)
 
         if len(ancestor.keys) == 0 and ancestor == btree.root:
             btree.root = left
 
     def __repr__(self):
-        return f"Keys: {self.keys}, Values: {self.data}, IsLeaf: {self.is_leaf}, Children: {len(self.children)}"
+        return f"Keys: {self.keys}, Values: {self.offsets}, IsLeaf: {self.is_leaf}, Children: {len(self.children)}"
 
 
 class BTree:
@@ -253,19 +253,19 @@ class BTree:
                 return
             # replace deleting value with neighbor
             neighbour_index = len(neighbour_node.keys) - 1 if type == "predecessor" else 0
-            neighbour_value = neighbour_node.data[neighbour_index]
+            neighbour_offset = neighbour_node.offsets[neighbour_index]
             node.keys[key_index] = neighbour_key
-            node.data[key_index] = neighbour_value
+            node.offsets[key_index] = neighbour_offset
             # remove predecessor from its old node
             neighbour_node.keys.remove(neighbour_key)
-            neighbour_node.data.remove(neighbour_value)
+            neighbour_node.offsets.remove(neighbour_offset)
             # remove from main file
-            self.delete_from_main_file(neighbour_value)
+            self.delete_from_main_file(neighbour_offset)
             self.compensate_and_merge(neighbour_node)
         else:
-            offset = int(node.data[key_index])
+            offset = int(node.offsets[key_index])
             node.keys.remove(key)
-            node.data.remove(offset)
+            node.offsets.remove(offset)
             # remove from main file
             self.delete_from_main_file(offset)
             self.compensate_and_merge(node)
@@ -298,7 +298,6 @@ class BTree:
 
         # Find the index of the key in the node
         i = node.keys.index(key)
-
         if not node.is_leaf:
             # Move to the right subtree of the key (left side of the node)
             predecessor_node = node.children[i]
@@ -348,25 +347,25 @@ class BTree:
             return None, None, None
 
     @staticmethod
-    def insert_into_node(key, value, node):
+    def insert_into_node(key, offset, node):
         i = 0
         while i < len(node.keys):
             if key <= node.keys[i]:
                 node.keys.insert(i, key)
-                node.data.insert(i, value)
+                node.offsets.insert(i, offset)
                 return
             i += 1
 
         node.keys.insert(i, key)
-        node.data.insert(i, value)
+        node.offsets.insert(i, offset)
 
-    def display(self, node=None, level=0, values=True):
+    def display(self, node=None, level=0, offsets=True):
         if node is None:
             node = self.root
 
-        print("-" * level + str(node.keys) + (str(node.data) if values else "") + " Children: " + str(len(node.children)))
+        print("-" * level + str(node.keys) + (str(node.offsets) if offsets else "") + " Children: " + str(len(node.children)))
         for child in node.children:
-            self.display(child, level + 1, values)
+            self.display(child, level + 1, offsets)
 
     def insert_to_main_file(self, key, value):
         with open(self.main_file_path, 'a') as f:

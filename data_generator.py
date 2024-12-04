@@ -10,9 +10,7 @@ def generate_records(file_name, num_records):
                 if key not in unique_keys:
                     unique_keys.add(key)
                     break
-
             value = list(random.choices(range(10), k=random.randint(1, 30)))
-
             file.write(f"1: {key}: {sorted(value)}\n")
     print(f"Plik '{file_name}' został wygenerowany z {num_records} rekordami.")
 
