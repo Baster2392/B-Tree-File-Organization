@@ -14,7 +14,7 @@ class BTreeNode:
         self.is_leaf = is_leaf
 
     @staticmethod
-    def get_node_sibling(node, ancestor_node):
+    def get_node_sibling(node, ancestor_node, btree):
         if ancestor_node is None:
             return None, None
         if len(ancestor_node.children) == 1:
@@ -22,40 +22,40 @@ class BTreeNode:
 
         this_index = ancestor_node.children.index(node.index)
         if this_index == 0:
-            return None, BTree.read_node_from_drive(ancestor_node.children[this_index + 1])
+            return None, BTree.read_node_from_drive(btree, ancestor_node.children[this_index + 1])
         elif this_index == len(ancestor_node.children) - 1:
-            return BTree.read_node_from_drive(ancestor_node.children[this_index - 1]), None
+            return BTree.read_node_from_drive(btree, ancestor_node.children[this_index - 1]), None
         else:
-            return BTree.read_node_from_drive(ancestor_node.children[this_index - 1]), BTree.read_node_from_drive(ancestor_node.children[this_index + 1])
+            return BTree.read_node_from_drive(btree, ancestor_node.children[this_index - 1]), BTree.read_node_from_drive(btree, ancestor_node.children[this_index + 1])
 
     @staticmethod
-    def compensation_insert(left, right, node, ancestor_node, middle_index):
+    def compensation_insert(left, right, node, ancestor_node, middle_index, btree):
         if left is None and right is None:
             return False
         if right is not None:
             if len(right.keys) < right.t:
-                BTreeNode.compensate(node, right, ancestor_node, middle_index + 1, operation="insert")
+                BTreeNode.compensate(node, right, ancestor_node, middle_index + 1, btree, operation="insert")
                 return True
         if left is not None:
             if len(left.keys) < left.t:
-                BTreeNode.compensate(left, node, ancestor_node, middle_index, operation="insert")
+                BTreeNode.compensate(left, node, ancestor_node, middle_index, btree, operation="insert")
                 return True
         return False
 
     @staticmethod
-    def compensation_delete(left, right, node, ancestor_node, middle_index):
+    def compensation_delete(left, right, node, ancestor_node, middle_index, btree):
         if left is None and right is None:
             return False
         if right is not None and len(right.keys) > right.t // 2 and len(right.keys) + len(node.keys) > right.t:
-            BTreeNode.compensate(node, right, ancestor_node, middle_index + 1, operation="delete")
+            BTreeNode.compensate(node, right, ancestor_node, middle_index + 1, btree, operation="delete")
             return True
         if left is not None and len(left.keys) > left.t // 2 and len(left.keys) + len(node.keys) > left.t:
-            BTreeNode.compensate(left, node, ancestor_node, middle_index, operation="delete")
+            BTreeNode.compensate(left, node, ancestor_node, middle_index, btree, operation="delete")
             return True
         return False
 
     @staticmethod
-    def compensate(left, right, ancestor, middle_index, operation="insert"):
+    def compensate(left, right, ancestor, middle_index, btree, operation="insert"):
         keys = []
         offsets = []
         children = []
@@ -89,9 +89,9 @@ class BTreeNode:
         right.children = children[split_index + 1:]
 
         # save modified modes
-        BTree.write_node_to_drive(left)
-        BTree.write_node_to_drive(right)
-        BTree.write_node_to_drive(ancestor)
+        BTree.write_node_to_drive(btree, left)
+        BTree.write_node_to_drive(btree, right)
+        BTree.write_node_to_drive(btree, ancestor)
 
     @staticmethod
     def split(node, btree):
@@ -180,7 +180,7 @@ class BTreeNode:
         # delete key and children from ancestor
         ancestor.keys.pop(middle_index)
         ancestor.offsets.pop(middle_index)
-        ancestor.children.remove(right)
+        ancestor.children.remove(right.index)
 
         btree.write_node_to_drive(ancestor)
         btree.write_node_to_drive(left)
@@ -199,8 +199,12 @@ class BTree:
         self.t = t
         self.main_file_path = file
         self.index_for_node = 0
-        self.read_write_operations = 0
+        # counters
+        self.write_operations = 0
+        self.read_operations = 0
+        # create first file
         root_node = BTreeNode(t, self.index_for_node, None, True)
+        self.index_for_node += 1
         self.write_node_to_drive(root_node)
 
     def traverse(self):
@@ -253,9 +257,9 @@ class BTree:
             # overflow
             # try compensation
             ancestor_node = self.read_node_from_drive(node.ancestor)
-            left, right = BTreeNode.get_node_sibling(node, ancestor_node)
+            left, right = BTreeNode.get_node_sibling(node, ancestor_node, self)
             if ancestor_node is not None:
-                if BTreeNode.compensation_insert(left, right, node, ancestor_node, ancestor_node.children.index(node.index) - 1):
+                if BTreeNode.compensation_insert(left, right, node, ancestor_node, ancestor_node.children.index(node.index) - 1, self):
                     return
             # compensation impossible
             # make a split
@@ -275,6 +279,8 @@ class BTree:
                 neighbour_key, neighbour_node, type = self.find_successor(key)
             if neighbour_key is None:
                 return
+            # remove from main file
+            self.delete_from_main_file(node.offsets[key_index])
             # replace deleting value with neighbor
             neighbour_index = len(neighbour_node.keys) - 1 if type == "predecessor" else 0
             neighbour_offset = neighbour_node.offsets[neighbour_index]
@@ -283,8 +289,6 @@ class BTree:
             # remove predecessor from its old node
             neighbour_node.keys.remove(neighbour_key)
             neighbour_node.offsets.remove(neighbour_offset)
-            # remove from main file
-            self.delete_from_main_file(neighbour_offset)
             self.compensate_and_merge(neighbour_node)
         else:
             offset = int(node.offsets[key_index])
@@ -302,9 +306,9 @@ class BTree:
         if len(node.keys) <= self.t // 2:
             # print("Compensating/merging...")
             ancestor_node = self.read_node_from_drive(node.ancestor)
-            left, right = BTreeNode.get_node_sibling(node, ancestor_node)
-            middle_index = node.ancestor.children.index(node) - 1
-            if BTreeNode.compensation_delete(left, right, node, ancestor_node, middle_index):
+            left, right = BTreeNode.get_node_sibling(node, ancestor_node, self)
+            middle_index = ancestor_node.children.index(node.index) - 1
+            if BTreeNode.compensation_delete(left, right, node, ancestor_node, middle_index, self):
                 return
             if left is not None and len(left.keys) + len(node.keys) < self.t:
                 middle_index = ancestor_node.children.index(left.index) - 1
@@ -391,6 +395,12 @@ class BTree:
             child_node = self.read_node_from_drive(child)
             self.display(child_node, level + 1, offsets)
 
+    def read_from_main_file(self, offset):
+        with open(self.main_file_path, 'r') as f:
+            f.seek(offset)
+            _, _, value = f.readline().strip().split(':')
+            return value
+
     def insert_to_main_file(self, key, value):
         with open(self.main_file_path, 'a') as f:
             offset = f.tell()
@@ -409,8 +419,7 @@ class BTree:
             f.seek(value)
             f.write(new_line)
 
-    @staticmethod
-    def write_node_to_drive(node):
+    def write_node_to_drive(self, node):
         with open(f"tree_structure/{node.index}.txt", "w") as f:
             f.write(str(node.t) + '\n')
             f.write(str(node.ancestor)+ '\n')
@@ -418,9 +427,10 @@ class BTree:
             f.write(str(node.keys)+ '\n')
             f.write(str(node.offsets)+ '\n')
             f.write(str(node.children)+ '\n')
+        self.write_operations += 1
 
-    @staticmethod
-    def read_node_from_drive(node_index):
+
+    def read_node_from_drive(self, node_index):
         if node_index is None:
             return None
 
@@ -439,6 +449,7 @@ class BTree:
             node.offsets = [] if line == "[]" else list(map(int, line.strip()[1:-1].split(',')))
             line = f.readline().strip()
             node.children = [] if line == "[]" else list(map(int, line.strip()[1:-1].split(',')))
+            self.write_operations += 1
             return node
 
     @staticmethod
@@ -464,7 +475,6 @@ if __name__ == "__main__":
         i += 1
         print(f"Po wstawieniu (key: {record}, value: {i}):")
         b_tree.display()
-        print(f"Operacje odczytu/zapisu: {b_tree.read_write_operations}")
 
     print("Przegląd całego drzewa:")
     print(b_tree.traverse())

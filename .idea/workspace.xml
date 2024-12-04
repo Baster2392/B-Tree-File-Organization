@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22888710-7969-4bde-b846-3cba6e2a3b72" name="Changes" comment="Renamed data variables">
+    <list default="true" id="22888710-7969-4bde-b846-3cba6e2a3b72" name="Changes" comment="Deleting and inserting to file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/btree.py" beforeDir="false" afterPath="$PROJECT_DIR$/btree.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/dataset50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/dataset50.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Saving-tree-on-drive" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
@@ -36,32 +42,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test.TestBTree.executor": "Run",
-    "Python tests.Python tests for test.TestBTree.test_compensation.executor": "Run",
-    "Python tests.Python tests for test.TestBTree.test_large_data_insert.executor": "Run",
-    "Python tests.Python tests for test.TestBTree.test_large_data_insert_and_delete.executor": "Run",
-    "Python tests.Python tests for test.TestBTree.test_multiple_inserts.executor": "Run",
-    "Python tests.Python tests for test.TestBTree.test_search_existing_key.executor": "Run",
-    "Python tests.Python tests for test.TestBTree.test_search_nonexistent_key.executor": "Run",
-    "Python tests.Python tests for test.TestBTree.test_split_root.executor": "Run",
-    "Python tests.Python tests for test.TestBTree.test_tree_height_after_inserts.executor": "Run",
-    "Python tests.Python tests in test.py.executor": "Run",
-    "Python.btree (1).executor": "Run",
-    "Python.btree.executor": "Run",
-    "Python.data_generator.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test.TestBTree.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestBTree.test_compensation.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestBTree.test_large_data_insert.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestBTree.test_large_data_insert_and_delete.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestBTree.test_multiple_inserts.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestBTree.test_search_existing_key.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestBTree.test_search_nonexistent_key.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestBTree.test_split_root.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestBTree.test_tree_height_after_inserts.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.btree (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_generator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Studia\Sem 5\BD\Projekt\B-Tree\data" />
@@ -100,13 +105,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (pythonProject)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/btree.py" />
+      <option name="SCRIPT_NAME" value="D:\Studia\Sem 5\BD\Projekt\B-Tree\btree.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -205,10 +209,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.btree (1)" />
-        <item itemvalue="Python.data_generator" />
         <item itemvalue="Python tests.Python tests for test.TestBTree.test_large_data_insert_and_delete" />
         <item itemvalue="Python tests.Python tests for test.TestBTree.test_large_data_insert" />
+        <item itemvalue="Python.data_generator" />
+        <item itemvalue="Python.btree (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -232,8 +236,7 @@
       <workItem from="1732965481811" duration="22936000" />
       <workItem from="1733171307913" duration="7045000" />
       <workItem from="1733228349862" duration="20373000" />
-      <workItem from="1733327347059" duration="8315000" />
-      <workItem from="1733335756370" duration="2729000" />
+      <workItem from="1733327347059" duration="1037000" />
     </task>
     <task id="LOCAL-00001" summary="Delete function">
       <option name="closed" value="true" />
@@ -259,15 +262,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733252275948</updated>
     </task>
-    <task id="LOCAL-00004" summary="Renamed data variables">
-      <option name="closed" value="true" />
-      <created>1733328586622</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1733328586622</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,11 +272,10 @@
     <MESSAGE value="Delete function" />
     <MESSAGE value="Generating and parsing file" />
     <MESSAGE value="Deleting and inserting to file" />
-    <MESSAGE value="Renamed data variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed data variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleting and inserting to file" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/B_Tree$main.coverage" NAME="main Coverage Results" MODIFIED="1733337900653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/B_Tree$main.coverage" NAME="main Coverage Results" MODIFIED="1733345259791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/B_Tree$.coverage" NAME=" Coverage Results" MODIFIED="1733241352446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/B_Tree$data_generator.coverage" NAME="data_generator Coverage Results" MODIFIED="1733249621369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/B_Tree$btree__1_.coverage" NAME="btree (1) Coverage Results" MODIFIED="1733237178038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

@@ -19,7 +19,7 @@ if __name__ == '__main__':
     tree = BTree(t=4)
     filepath = f"data/{input("Enter file name: ")}"
     tree.main_file_path = filepath
-    new_tree = parse_file(filepath, tree)
+    parse_file(filepath, tree)
     print("File parsed successfully.")
     while True:
         option = input("Choose an option:\n"
@@ -30,6 +30,8 @@ if __name__ == '__main__':
                        "5. Update value\n"
                        "6. Exit\n"
                        "Enter your choice: ")
+        print("Write operations:", tree.write_operations)
+        print("Read operations:", tree.read_operations)
         match option:
             case "1":
                 key = int(input("Enter key: "))
@@ -44,7 +46,7 @@ if __name__ == '__main__':
                 key = int(input("Enter key: "))
                 found_node, status = tree.search(key)
                 if status == "found":
-                    print(f"Found ({key}, {found_node.children[found_node.keys.index(key)]})")
+                    print(f"Found ({key}, {tree.read_from_main_file(found_node.offsets[found_node.keys.index(key)])})")
                 else:
                     print(f"Not found {key} in tree.")
             case "4":

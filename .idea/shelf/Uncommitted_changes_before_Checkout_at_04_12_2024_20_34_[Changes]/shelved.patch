@@ -1,0 +1,189 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"22888710-7969-4bde-b846-3cba6e2a3b72\" name=\"Changes\" comment=\"Deleting and inserting to file\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/btree.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/btree.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/dataset50.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/dataset50.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data_generator.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data_generator.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/main.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pUliLSXFNiKnHhCf3KUjJ5CjCT\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Python tests.Python tests for test.TestBTree.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python tests.Python tests for test.TestBTree.test_compensation.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python tests.Python tests for test.TestBTree.test_large_data_insert.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python tests.Python tests for test.TestBTree.test_large_data_insert_and_delete.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python tests.Python tests for test.TestBTree.test_multiple_inserts.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python tests.Python tests for test.TestBTree.test_search_existing_key.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python tests.Python tests for test.TestBTree.test_search_nonexistent_key.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python tests.Python tests for test.TestBTree.test_split_root.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python tests.Python tests for test.TestBTree.test_tree_height_after_inserts.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python tests.Python tests in test.py.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.btree (1).executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.data_generator.executor&quot;: &quot;Run&quot;,\r\n    &quot;Python.main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Studia\\Sem 5\\BD\\Projekt\\B-Tree\\data\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.main\">\r\n    <configuration name=\"btree (1)\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"B-Tree\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/btree.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"btree\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\r\n      <module name=\"B-Tree\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"D:\\Studia\\Sem 5\\BD\\Projekt\\B-Tree\\btree.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"data_generator\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"B-Tree\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/data_generator.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"B-Tree\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Python tests for test.TestBTree.test_large_data_insert\" type=\"tests\" factoryName=\"Autodetect\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"B-Tree\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"_new_additionalArguments\" value=\"&quot;&quot;\" />\r\n      <option name=\"_new_target\" value=\"&quot;test.TestBTree.test_large_data_insert&quot;\" />\r\n      <option name=\"_new_targetType\" value=\"&quot;PYTHON&quot;\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Python tests for test.TestBTree.test_large_data_insert_and_delete\" type=\"tests\" factoryName=\"Autodetect\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"B-Tree\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"_new_additionalArguments\" value=\"&quot;&quot;\" />\r\n      <option name=\"_new_target\" value=\"&quot;test.TestBTree.test_large_data_insert_and_delete&quot;\" />\r\n      <option name=\"_new_targetType\" value=\"&quot;PYTHON&quot;\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.main\" />\r\n        <item itemvalue=\"Python.data_generator\" />\r\n        <item itemvalue=\"Python tests.Python tests for test.TestBTree.test_large_data_insert_and_delete\" />\r\n        <item itemvalue=\"Python.btree (1)\" />\r\n        <item itemvalue=\"Python tests.Python tests for test.TestBTree.test_large_data_insert\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241\" />\r\n        <option value=\"bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"22888710-7969-4bde-b846-3cba6e2a3b72\" name=\"Changes\" comment=\"\" />\r\n      <created>1732828660353</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732828660353</updated>\r\n      <workItem from=\"1732828661701\" duration=\"2179000\" />\r\n      <workItem from=\"1732965481811\" duration=\"22936000\" />\r\n      <workItem from=\"1733171307913\" duration=\"7045000\" />\r\n      <workItem from=\"1733228349862\" duration=\"20373000\" />\r\n      <workItem from=\"1733327347059\" duration=\"1037000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Delete function\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1733177968991</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1733177968991</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Generating and parsing file\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1733237579743</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1733237579743</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Deleting and inserting to file\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1733252275948</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1733252275948</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Delete function\" />\r\n    <MESSAGE value=\"Generating and parsing file\" />\r\n    <MESSAGE value=\"Deleting and inserting to file\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Deleting and inserting to file\" />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/B_Tree$main.coverage\" NAME=\"main Coverage Results\" MODIFIED=\"1733328223533\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n    <SUITE FILE_PATH=\"coverage/B_Tree$.coverage\" NAME=\" Coverage Results\" MODIFIED=\"1733241352446\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n    <SUITE FILE_PATH=\"coverage/B_Tree$data_generator.coverage\" NAME=\"data_generator Coverage Results\" MODIFIED=\"1733249621369\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n    <SUITE FILE_PATH=\"coverage/B_Tree$btree__1_.coverage\" NAME=\"btree (1) Coverage Results\" MODIFIED=\"1733237178038\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0a33676793c4193e4fd506efe072b60d63ef2dfb)
++++ b/.idea/workspace.xml	(date 1733340795299)
+@@ -4,12 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="22888710-7969-4bde-b846-3cba6e2a3b72" name="Changes" comment="Deleting and inserting to file">
++    <list default="true" id="22888710-7969-4bde-b846-3cba6e2a3b72" name="Changes" comment="Renamed data variables">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/btree.py" beforeDir="false" afterPath="$PROJECT_DIR$/btree.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data/dataset50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/dataset50.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -24,6 +20,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProblemsViewState">
+@@ -38,31 +39,32 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Python tests.Python tests for test.TestBTree.executor&quot;: &quot;Run&quot;,
+-    &quot;Python tests.Python tests for test.TestBTree.test_compensation.executor&quot;: &quot;Run&quot;,
+-    &quot;Python tests.Python tests for test.TestBTree.test_large_data_insert.executor&quot;: &quot;Run&quot;,
+-    &quot;Python tests.Python tests for test.TestBTree.test_large_data_insert_and_delete.executor&quot;: &quot;Run&quot;,
+-    &quot;Python tests.Python tests for test.TestBTree.test_multiple_inserts.executor&quot;: &quot;Run&quot;,
+-    &quot;Python tests.Python tests for test.TestBTree.test_search_existing_key.executor&quot;: &quot;Run&quot;,
+-    &quot;Python tests.Python tests for test.TestBTree.test_search_nonexistent_key.executor&quot;: &quot;Run&quot;,
+-    &quot;Python tests.Python tests for test.TestBTree.test_split_root.executor&quot;: &quot;Run&quot;,
+-    &quot;Python tests.Python tests for test.TestBTree.test_tree_height_after_inserts.executor&quot;: &quot;Run&quot;,
+-    &quot;Python tests.Python tests in test.py.executor&quot;: &quot;Run&quot;,
+-    &quot;Python.btree (1).executor&quot;: &quot;Run&quot;,
+-    &quot;Python.data_generator.executor&quot;: &quot;Run&quot;,
+-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Python tests.Python tests for test.TestBTree.executor": "Run",
++    "Python tests.Python tests for test.TestBTree.test_compensation.executor": "Run",
++    "Python tests.Python tests for test.TestBTree.test_large_data_insert.executor": "Run",
++    "Python tests.Python tests for test.TestBTree.test_large_data_insert_and_delete.executor": "Run",
++    "Python tests.Python tests for test.TestBTree.test_multiple_inserts.executor": "Run",
++    "Python tests.Python tests for test.TestBTree.test_search_existing_key.executor": "Run",
++    "Python tests.Python tests for test.TestBTree.test_search_nonexistent_key.executor": "Run",
++    "Python tests.Python tests for test.TestBTree.test_split_root.executor": "Run",
++    "Python tests.Python tests for test.TestBTree.test_tree_height_after_inserts.executor": "Run",
++    "Python tests.Python tests in test.py.executor": "Run",
++    "Python.btree (1).executor": "Run",
++    "Python.btree.executor": "Run",
++    "Python.data_generator.executor": "Run",
++    "Python.main.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "git-widget-placeholder": "Saving-tree-on-drive",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="D:\Studia\Sem 5\BD\Projekt\B-Tree\data" />
+@@ -101,12 +103,13 @@
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
++      <option name="SDK_NAME" value="Python 3.12 (pythonProject)" />
+       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="true" />
++      <option name="IS_MODULE_SDK" value="false" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="D:\Studia\Sem 5\BD\Projekt\B-Tree\btree.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/btree.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -147,8 +150,9 @@
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
++      <option name="SDK_NAME" value="Python 3.12 (pythonProject)" />
+       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="true" />
++      <option name="IS_MODULE_SDK" value="false" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+@@ -193,13 +197,21 @@
+       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+       <method v="2" />
+     </configuration>
++    <list>
++      <item itemvalue="Python.btree" />
++      <item itemvalue="Python.btree (1)" />
++      <item itemvalue="Python.data_generator" />
++      <item itemvalue="Python.main" />
++      <item itemvalue="Python tests.Python tests for test.TestBTree.test_large_data_insert" />
++      <item itemvalue="Python tests.Python tests for test.TestBTree.test_large_data_insert_and_delete" />
++    </list>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Python tests.Python tests for test.TestBTree.test_large_data_insert_and_delete" />
++        <item itemvalue="Python tests.Python tests for test.TestBTree.test_large_data_insert" />
+         <item itemvalue="Python.main" />
+         <item itemvalue="Python.data_generator" />
+-        <item itemvalue="Python tests.Python tests for test.TestBTree.test_large_data_insert_and_delete" />
+         <item itemvalue="Python.btree (1)" />
+-        <item itemvalue="Python tests.Python tests for test.TestBTree.test_large_data_insert" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -223,7 +235,8 @@
+       <workItem from="1732965481811" duration="22936000" />
+       <workItem from="1733171307913" duration="7045000" />
+       <workItem from="1733228349862" duration="20373000" />
+-      <workItem from="1733327347059" duration="1037000" />
++      <workItem from="1733327347059" duration="8315000" />
++      <workItem from="1733335756370" duration="2729000" />
+     </task>
+     <task id="LOCAL-00001" summary="Delete function">
+       <option name="closed" value="true" />
+@@ -249,7 +262,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1733252275948</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="Renamed data variables">
++      <option name="closed" value="true" />
++      <created>1733328586622</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1733328586622</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -259,12 +280,14 @@
+     <MESSAGE value="Delete function" />
+     <MESSAGE value="Generating and parsing file" />
+     <MESSAGE value="Deleting and inserting to file" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Deleting and inserting to file" />
++    <MESSAGE value="Renamed data variables" />
++    <option name="LAST_COMMIT_MESSAGE" value="Renamed data variables" />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/B_Tree$main.coverage" NAME="main Coverage Results" MODIFIED="1733328223533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/B_Tree$main.coverage" NAME="main Coverage Results" MODIFIED="1733338942018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+     <SUITE FILE_PATH="coverage/B_Tree$.coverage" NAME=" Coverage Results" MODIFIED="1733241352446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+     <SUITE FILE_PATH="coverage/B_Tree$data_generator.coverage" NAME="data_generator Coverage Results" MODIFIED="1733249621369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+     <SUITE FILE_PATH="coverage/B_Tree$btree__1_.coverage" NAME="btree (1) Coverage Results" MODIFIED="1733237178038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/B_Tree$btree.coverage" NAME="btree Coverage Results" MODIFIED="1733336513882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+   </component>
+ </project>
+\ No newline at end of file
