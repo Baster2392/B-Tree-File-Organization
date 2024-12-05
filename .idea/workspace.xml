@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22888710-7969-4bde-b846-3cba6e2a3b72" name="Changes" comment="Improved memory management">
+    <list default="true" id="22888710-7969-4bde-b846-3cba6e2a3b72" name="Changes" comment="Reading instructions from file">
+      <change afterPath="$PROJECT_DIR$/instructions/i2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/btree.py" beforeDir="false" afterPath="$PROJECT_DIR$/btree.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/dataset50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/dataset50.txt" afterDir="false" />
@@ -238,7 +239,7 @@
       <workItem from="1733171307913" duration="7045000" />
       <workItem from="1733228349862" duration="20373000" />
       <workItem from="1733327347059" duration="1037000" />
-      <workItem from="1733399277185" duration="4159000" />
+      <workItem from="1733399277185" duration="6484000" />
     </task>
     <task id="LOCAL-00001" summary="Delete function">
       <option name="closed" value="true" />
@@ -272,7 +273,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733345601929</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Reading instructions from file">
+      <option name="closed" value="true" />
+      <created>1733404468190</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733404468190</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,12 +292,13 @@
     <MESSAGE value="Generating and parsing file" />
     <MESSAGE value="Deleting and inserting to file" />
     <MESSAGE value="Improved memory management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved memory management" />
+    <MESSAGE value="Reading instructions from file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reading instructions from file" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/B_Tree$main.coverage" NAME="main Coverage Results" MODIFIED="1733401572772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/B_Tree$main.coverage" NAME="main Coverage Results" MODIFIED="1733405976259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/B_Tree$.coverage" NAME=" Coverage Results" MODIFIED="1733241352446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/B_Tree$data_generator.coverage" NAME="data_generator Coverage Results" MODIFIED="1733401132222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/B_Tree$data_generator.coverage" NAME="data_generator Coverage Results" MODIFIED="1733405624624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/B_Tree$btree__1_.coverage" NAME="btree (1) Coverage Results" MODIFIED="1733237178038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/B_Tree$btree.coverage" NAME="btree Coverage Results" MODIFIED="1733336513882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

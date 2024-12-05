@@ -1,8 +1,5 @@
 import os
 
-BLOCK_SIZE = 32
-
-
 class BTreeNode:
     def __init__(self, t, index, ancestor=None, is_leaf=True):
         self.t = t  # Max number of keys in one node
