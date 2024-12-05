@@ -457,35 +457,3 @@ class BTree:
     def delete_node(node):
         os.remove(f"tree_structure/{node.index}.txt")
         del node
-
-
-if __name__ == "__main__":
-    b_tree = BTree(t=4)
-
-    records1 = [10, 12, 20, 5, 6, 13, 30, 7, 34, 67, 34, 98, 45, 1, 35, 44, 47, 51, 69, 70,
-                18, 23, 102, 61, 22, 80, 81, 82, 55, 66, 11, 0, 150, -1, -2, -3, -4, 9, 77, 105, 107, 106, -10,
-                -11, -12, -13, -14, -15, -16, -17, -18, -19, -20, 200, 201, 202, 203, 204, 205, 206, 207, 208, 46, 43]
-    records2 = [10, 20, 15, 2, 30, 12, 23, 22, 55, 9, 32, 11, 15, 111, 102, 97, 18, 27]
-
-    i = 0
-
-    for record in records1:
-        print(f"Wstawianie (key: {record}, value: {i}):")
-        # inp = input("Press key...")
-        b_tree.insert(record, i)
-        i += 1
-        print(f"Po wstawieniu (key: {record}, value: {i}):")
-        b_tree.display()
-
-    print("Przegląd całego drzewa:")
-    print(b_tree.traverse())
-    # inp = input("Press key...")
-
-    for record in records1:
-        key = int(input("Klucz do usuniecia: "))
-        b_tree.delete(key)
-        print(f"Po usunieciu {key}:")
-        b_tree.display()
-
-    print("Przegląd całego drzewa:")
-    print(b_tree.traverse())
