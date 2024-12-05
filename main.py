@@ -14,6 +14,35 @@ def parse_file(file_path, btree):
             line = file.readline()
     return btree
 
+def delete_node_files(tree):
+    for index in range(tree.index_for_node):
+        os.remove(f"tree_structure/{index}.txt")
+
+def parse_command(command, tree):
+    option = command[0]
+    match option:
+        case '1':
+            _, key, value = command.strip().split(';')
+            tree.insert(int(key), value)
+            print(f"Inserted ({key}, {value})")
+        case '2':
+            _, key = command.strip().split(';')
+            tree.delete(int(key))
+            print(f"Deleted ({key})")
+        case '3':
+            _, key = command.strip().split(';')
+            found_node, status = tree.search(int(key))
+            if status == "found":
+                print(f"Found ({key}, {tree.read_from_main_file(found_node.offsets[found_node.keys.index(int(key))])})")
+            else:
+                print(f"Not found {key} in tree.")
+        case '4':
+            tree.display(offsets=False)
+        case '5':
+            _, key, value = command.strip().split(';')
+            tree.delete(int(key))
+            tree.insert(int(key), value)
+    print(f"Operations: read operations: {tree.read_operations}, write operations: {tree.write_operations}")
 
 if __name__ == '__main__':
     tree = BTree(t=4)
@@ -28,7 +57,8 @@ if __name__ == '__main__':
                        "3. Search\n"
                        "4. Display tree\n"
                        "5. Update value\n"
-                       "6. Exit\n"
+                       "6. Read instructions from file\n"
+                       "7. Exit\n"
                        "Enter your choice: ")
         print("Write operations:", tree.write_operations)
         print("Read operations:", tree.read_operations)
@@ -55,13 +85,15 @@ if __name__ == '__main__':
             case "5":
                 key = int(input("Enter key: "))
                 value = input("Enter new value: ")
-                found_node, status = tree.search(key)
-                if status == "found":
-                    found_node[key] = value
-                    print(f"Updated ({key}, {found_node.children[found_node.keys.index(key)]})")
-                else:
-                    print(f"Not found {key} in tree.")
+                tree.delete(key)
+                tree.insert(key, value)
             case "6":
+                filepath = f"instructions/{input('Enter file name: ')}"
+                with open(filepath, 'r') as file:
+                    for line in file:
+                        parse_command(line, tree)
+            case "7":
+                delete_node_files(tree)
                 exit(0)
 
         input("Press Enter to continue...")

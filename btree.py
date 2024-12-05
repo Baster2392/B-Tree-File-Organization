@@ -290,6 +290,8 @@ class BTree:
             neighbour_node.keys.remove(neighbour_key)
             neighbour_node.offsets.remove(neighbour_offset)
             self.compensate_and_merge(neighbour_node)
+            self.write_node_to_drive(node)
+            self.write_node_to_drive(neighbour_node)
         else:
             offset = int(node.offsets[key_index])
             node.keys.remove(key)
@@ -297,6 +299,7 @@ class BTree:
             # remove from main file
             self.delete_from_main_file(offset)
             self.compensate_and_merge(node)
+            self.write_node_to_drive(node)
 
     def compensate_and_merge(self, node):
         if node == self.root:
@@ -434,6 +437,7 @@ class BTree:
         if node_index is None:
             return None
 
+        self.read_operations += 1
         with open(f"tree_structure/{node_index}.txt", "r") as f:
             t = int(f.readline().strip())
             node = BTreeNode(t, node_index)
